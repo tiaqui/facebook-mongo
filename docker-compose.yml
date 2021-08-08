@@ -1,0 +1,12 @@
+services:
+  database:
+    image: 'mongo'
+    container_name: 'mongo-db'
+    environment:
+      - MONGO_INITDB_DATABASE=scrapes
+      - MONGO_INITDB_ROOT_USERNAME=admin 
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - ./mongo-volume/:/data/db
+    ports:
+      - 27017:27017 
