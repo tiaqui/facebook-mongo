@@ -1,10 +1,10 @@
 from pymongo import MongoClient, errors
 from facebook_scraper import get_posts
 
-DOMAIN = 'localhost'
-PORT = '27017'
+DOMAIN = "localhost"
+PORT = "27017"
 PAGE_NAME = "coherenciaporfavor"
-DB_NAME = 'fb_store'
+DB_NAME = "scrapes"
 
 
 def fetch_posts(page=PAGE_NAME, pages=10, **kwargs):
@@ -19,8 +19,6 @@ if __name__ == "__main__":
         "reactors": True,
         # , 'posts_per_page': 200}
     }
-    
-    db = client.scrapes()
 
     try:
         # try to instantiate a client instance
@@ -34,9 +32,11 @@ if __name__ == "__main__":
 
         database_names = client.list_database_names()
         print("\nDatabases:", database_names)
-        
-        if not DB_NAME in database_names:
-            
+
+        db = client["scrapes"]
+        col_posts = db["posts"]
+        col_comments = db["comments"]
+        col_replies = db["replies"]
 
     except errors.ServerSelectionTimeoutError as err:
         print("pymongo ERROR:", err)
