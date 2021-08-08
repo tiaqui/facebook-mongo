@@ -1,0 +1,7 @@
+credentials:
+  user:
+  password:
+post_urls:
+comments: True
+reactors: True
+posts_per_page: 200
