@@ -1,7 +1,13 @@
 credentials:
   user:
   password:
+page: "coherenciaporfavor"
 post_urls:
+  - 1584781918529337
+  - 1590404371300425
+pages: 10
+cookies: "cookies.json"
 comments: True
 reactors: True
+progress: True
 posts_per_page: 200
