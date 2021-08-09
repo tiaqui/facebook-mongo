@@ -31,11 +31,15 @@ def fetch_posts(
                 options=options,
             )
         ]
-
+    print(options)
     return [
         post
         for post in get_posts(
-            page, pages=pages, credentials=credentials, cookies=cookies, options=options
+            page,
+            pages=pages,
+            credentials=credentials,
+            cookies=cookies,
+            options=options,
         )
     ]
 
@@ -100,6 +104,7 @@ def insert_elements(objects, collection, id="post_id"):
             insert_objects.append(object)
     if len(insert_objects):
         collection.insert_many(insert_objects)
+        print(f"{len(insert_objects)} objects inserted in the Collection")
     return
 
 
@@ -117,6 +122,8 @@ if __name__ == "__main__":
         cookies=cookies,
         options=options,
     )
+
+    print(f"{len(posts)} posts extracted.")
 
     try:
         client = MongoClient(
