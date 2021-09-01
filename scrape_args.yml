@@ -10,4 +10,4 @@ cookies: "cookies.json"
 comments: True
 reactors: True
 progress: True
-posts_per_page: 200
+posts_per_page: 20

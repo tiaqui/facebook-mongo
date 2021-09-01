@@ -1,10 +1,10 @@
 import copy
 import yaml
-from pymongo import MongoClient, errors
+import sqlalchemy
 from facebook_scraper import get_posts
 
 DOMAIN = "localhost"
-PORT = "27017"
+PORT = "5432"
 PAGE_NAME = "coherenciaporfavor"
 DB_NAME = "scrapes"
 
